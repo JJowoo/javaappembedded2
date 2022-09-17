@@ -5,14 +5,15 @@
       <map>
         <entry key="..\:/Users/JJowoo/AndroidStudioProjects/javaappembedded/app/src/main/res/drawable/bin_blue.xml" value="0.344" />
         <entry key="..\:/Users/JJowoo/AndroidStudioProjects/javaappembedded/app/src/main/res/drawable/bin_dark_blue.xml" value="0.344" />
+        <entry key="..\:/Users/JJowoo/AndroidStudioProjects/javaappembedded/app/src/main/res/layout/activity_add_card.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/JJowoo/AndroidStudioProjects/javaappembedded/app/src/main/res/layout/activity_add_vehicle.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/JJowoo/AndroidStudioProjects/javaappembedded/app/src/main/res/layout/activity_home.xml" value="0.358695652173913" />
         <entry key="..\:/Users/JJowoo/AndroidStudioProjects/javaappembedded/app/src/main/res/layout/activity_login.xml" value="0.358695652173913" />
         <entry key="..\:/Users/JJowoo/AndroidStudioProjects/javaappembedded/app/src/main/res/layout/activity_login2.xml" value="0.5390625" />
         <entry key="..\:/Users/JJowoo/AndroidStudioProjects/javaappembedded/app/src/main/res/layout/activity_main.xml" value="0.5536458333333333" />
         <entry key="..\:/Users/JJowoo/AndroidStudioProjects/javaappembedded/app/src/main/res/layout/activity_mainpage.xml" value="0.24958123953098826" />
-        <entry key="..\:/Users/bookm/AndroidStudioProjects/javaappembedded/app/src/main/res/layout/activity_login.xml" value="0.2259963768115942" />
-        <entry key="..\:/Users/bookm/AndroidStudioProjects/javaappembedded/app/src/main/res/layout/activity_main.xml" value="0.18432971014492755" />
-        <entry key="..\:/Users/bookm/AndroidStudioProjects/javaappembedded/app/src/main/res/layout/activity_mainpage.xml" value="0.2259963768115942" />
-        <entry key="..\:/Users/bookm/AndroidStudioProjects/javaappembedded/app/src/main/res/layout/activity_sign_in.xml" value="0.2259963768115942" />
+        <entry key="..\:/Users/JJowoo/AndroidStudioProjects/javaappembedded/app/src/main/res/layout/activity_sheet_adjust.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/JJowoo/AndroidStudioProjects/javaappembedded/app/src/main/res/layout/activity_sign_in.xml" value="0.358695652173913" />
       </map>
     </option>
   </component>
