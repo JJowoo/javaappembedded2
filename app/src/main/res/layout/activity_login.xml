@@ -102,7 +102,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="5"
             android:gravity="center"
-            android:text="Sign in"
+            android:text="Sign up"
             android:textColor="@android:color/holo_blue_bright"
             android:textSize="24sp"></TextView>
 
