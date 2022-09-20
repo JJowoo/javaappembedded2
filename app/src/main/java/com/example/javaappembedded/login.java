@@ -37,9 +37,5 @@ public class login extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-
-
     }
 }
