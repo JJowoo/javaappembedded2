@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.javaappembedded" >
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -30,7 +29,7 @@
             android:name=".Home"
             android:exported="false" />
         <activity
-            android:name=".SheetAdjust"
+            android:name=".SeatAdjust"
             android:exported="false" />
         <activity
             android:name=".AddCard"
@@ -39,7 +38,7 @@
             android:name=".AddVehicle"
             android:exported="false" />
         <activity
-            android:name=".SignIn"
+            android:name=".SignUp"
             android:exported="false" />
         <activity
             android:name=".SettingActivity"

@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.google.android.material.textfield.TextInputEditText;
-
 public class SettingActivity extends AppCompatActivity {
 
 
@@ -36,7 +34,7 @@ public class SettingActivity extends AppCompatActivity {
         });
         button_position.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-                Intent intent = new Intent(getApplicationContext(),SheetAdjust.class);
+                Intent intent = new Intent(getApplicationContext(), SeatAdjust.class);
                 startActivity(intent);
             }
         });

@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
@@ -29,7 +28,7 @@ public class Home extends AppCompatActivity {
         });
         button_position.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-                Intent intent = new Intent(getApplicationContext(),SheetAdjust.class);
+                Intent intent = new Intent(getApplicationContext(), SeatAdjust.class);
                 startActivity(intent);
             }
         });

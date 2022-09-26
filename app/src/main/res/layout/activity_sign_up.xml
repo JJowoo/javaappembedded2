@@ -12,11 +12,11 @@
 
 
         <TextView
-            android:id="@+id/signin"
+            android:id="@+id/signup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Sign In"
+            android:text="Sign Up"
             android:textSize="30dp"/>
 
         <LinearLayout
@@ -32,6 +32,7 @@
                 android:text="name" />
 
             <EditText
+                android:id="@+id/editText_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="name" />
@@ -54,6 +55,7 @@
                 android:text="email to login" />
 
             <EditText
+                android:id="@+id/editText_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="email" />
@@ -74,7 +76,7 @@
                 android:text="password" />
 
             <EditText
-                android:id="@+id/password"
+                android:id="@+id/editText_password"
                 android:inputType="textPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -94,7 +96,7 @@
                 android:text="password confirm" />
 
             <EditText
-                android:id="@+id/password_confirm"
+                android:id="@+id/editText_password_confirm"
                 android:inputType="textPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -114,7 +116,7 @@
                 android:text="phone number" />
 
             <EditText
-                android:id="@+id/phone_num"
+                android:id="@+id/editText_phone_num"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="phone number"
@@ -125,8 +127,8 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Sign In"
-            android:id="@+id/btn_signin"/>
+            android:text="Sign Up"
+            android:id="@+id/btn_signup"/>
 
 
 
