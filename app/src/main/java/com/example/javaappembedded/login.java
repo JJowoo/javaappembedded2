@@ -74,7 +74,6 @@ public class login extends AppCompatActivity {
                 if (user != null) {
                     String uid=user.getUid();
                     Intent intent = new Intent(login.this, Mainpage.class);
-                    String email = editText_email.getText().toString();
                     intent.putExtra("uid", uid);
 
                     startActivity(intent);

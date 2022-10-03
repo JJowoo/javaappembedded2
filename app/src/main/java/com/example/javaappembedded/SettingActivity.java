@@ -25,9 +25,9 @@ public class SettingActivity extends AppCompatActivity {
         btn_cardSetting = findViewById(R.id.button_carpay);
         btn_Vsetting = findViewById(R.id.button_carsetting);
 
-        //email값을 받아옴
+        //uid값을 받아옴
         Intent intent = getIntent();
-        String email = intent.getStringExtra("email");
+        String uid = intent.getStringExtra("uid");
 
         //btn_logout to go login page with "logout" message
         btn_logout.setOnClickListener(new View.OnClickListener(){
@@ -52,7 +52,7 @@ public class SettingActivity extends AppCompatActivity {
             public void onClick(View view){
                 Intent intent = new Intent(getApplicationContext(),VehicleManager.class);
                 //email값을 넘겨줌
-                intent.putExtra("email",email);
+                intent.putExtra("uid",uid);
                 startActivity(intent);
             }
         });

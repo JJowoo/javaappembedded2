@@ -29,7 +29,8 @@
         android:layout_height="wrap_content"
         android:text="차량번호"
         android:textSize="20dp"
-            android:layout_weight="5"/>
+            android:layout_weight="5"
+            android:id="@+id/car_num"/>
 
 
         <LinearLayout
@@ -43,12 +44,14 @@
                 android:layout_height="wrap_content"
                 android:text="차종"
                 android:textSize="20dp"
-                android:layout_weight="5"/>
+                android:layout_weight="5"
+                android:id="@+id/vehicle_type"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="탑승인원"
                 android:textSize="20dp"
+                android:id="@+id/max_num"
                 android:layout_weight="5"/>
         </LinearLayout>
 

@@ -46,12 +46,17 @@ public class AddVehicle extends AppCompatActivity {
                 maxNum = (EditText) findViewById(R.id.max_num);
                 String maxNumStr = maxNum.getText().toString();
                 String carNumStr = carNum.getText().toString();
+                String vehicleTypeStr = vehicleType.getText().toString();
+
+
                 Log.d("carNumStr",carNumStr);
                 Log.d("carNum", carNum.toString());
                 Log.d("vehicleType", vehicleType.toString());
                 Log.d("maxNum", maxNum.toString());
 
+                //데이터베이스에 저장
 //                Log.d("차종", mDatabase.child(uid).child("등록차량").child(String.valueOf(carNum)).child("차종").setValue(vehicleType));
+                mDatabase.child(uid).child("등록차량").child(carNumStr).child("차종").setValue(vehicleTypeStr);
                 mDatabase.child(uid).child("등록차량").child(carNumStr).child("최대승차인원").setValue(maxNumStr);
 
                 //mainpage로 이동
