@@ -9,15 +9,56 @@ import android.widget.Button;
 
 public class SettingActivity extends AppCompatActivity {
 
+    Button button_carpay,button_home,button_position,btn_logout,btn_cardSetting,btn_Vsetting,btn_postionreset, button_more;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
 
-        Button button_carpay = findViewById(R.id.button_carpay);
-        Button button_home = findViewById(R.id.button_home);
-        Button button_position = findViewById(R.id.button_position);
+        button_carpay = findViewById(R.id.button_carpay);
+        button_home = findViewById(R.id.button_home);
+        button_position = findViewById(R.id.button_position);
+
+        btn_logout = findViewById(R.id.button_logout);
+        btn_cardSetting = findViewById(R.id.button_carpay);
+        btn_Vsetting = findViewById(R.id.button_carsetting);
+
+        //email값을 받아옴
+        Intent intent = getIntent();
+        String email = intent.getStringExtra("email");
+
+        //btn_logout to go login page with "logout" message
+        btn_logout.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                Intent intent = new Intent(getApplicationContext(),login.class);
+                intent.putExtra("logout","로그아웃 되었습니다.");
+                startActivity(intent);
+            }
+        });
+
+        /*
+        //btn_cardSetting to go card setting page
+        btn_cardSetting.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                Intent intent = new Intent(getApplicationContext(),CardSetting.class);
+                startActivity(intent);
+            }
+        });*/
+
+        //btn_Vsetting to go vehicle setting page
+        btn_Vsetting.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                Intent intent = new Intent(getApplicationContext(),VehicleManager.class);
+                //email값을 넘겨줌
+                intent.putExtra("email",email);
+                startActivity(intent);
+            }
+        });
+
+
+
 
 
         button_carpay.setOnClickListener(new View.OnClickListener(){

@@ -25,6 +25,7 @@ public class login extends AppCompatActivity {
     EditText editText_email,editText_Password;
     Button button_login;
     Button sign_up_button;
+    Button button3;
     private FirebaseAuth.AuthStateListener firebaseAuthListener;
 
 
@@ -41,6 +42,11 @@ public class login extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
+
+        //if intent is not null, then get the string from the intent and show it in the toast
+        if(getIntent().getStringExtra("logout") != null){
+            Toast.makeText(this, getIntent().getStringExtra("logout"), Toast.LENGTH_SHORT).show();
+        }
 
         button_login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,13 +72,28 @@ public class login extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
+                    String uid=user.getUid();
                     Intent intent = new Intent(login.this, Mainpage.class);
+                    String email = editText_email.getText().toString();
+                    intent.putExtra("uid", uid);
+
                     startActivity(intent);
                     finish();
                 } else {
                 }
             }
         };
+        //button3누르면 home으로 이동 (임시)
+        Button button3 = (Button) findViewById(R.id.button3);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Mainpage.class);
+                intent.putExtra("uid", "d4qPsAkTnHPK7Ze8sEVxQPBhGxF2");
+                startActivity(intent);
+            }
+        });
+
     }
 
     public void loginUser(String email, String password) {

@@ -129,6 +129,11 @@
             android:layout_height="match_parent"
             android:text="Sign Up"
             android:id="@+id/btn_signup"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="test"
+            android:id="@+id/dbtest"/>
 
 
 
