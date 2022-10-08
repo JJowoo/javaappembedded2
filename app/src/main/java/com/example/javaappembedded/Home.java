@@ -24,8 +24,6 @@ public class Home extends AppCompatActivity {
         String uid = intent.getStringExtra("uid");
 
 
-
-
         button_carpay.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 Intent intent = new Intent(getApplicationContext(),Mainpage.class);

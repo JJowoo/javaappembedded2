@@ -106,6 +106,16 @@
             android:gravity="left"
             />
 
+        <Button
+            android:id="@+id/button_AddLicense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:text="운전면허증 등록"
+            android:textSize="20dp"
+            android:gravity="left"
+            />
+
 
     </LinearLayout>
 

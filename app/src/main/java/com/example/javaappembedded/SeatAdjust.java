@@ -15,6 +15,9 @@ public class SeatAdjust extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seat_adjust);
 
+        Intent intent = getIntent();
+        String uid = intent.getStringExtra("uid");
+
         Button button_carpay = findViewById(R.id.button_carpay);
         Button button_home = findViewById(R.id.button_home);
         Button button_more = findViewById(R.id.button_more);
@@ -23,18 +26,21 @@ public class SeatAdjust extends AppCompatActivity {
         button_carpay.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 Intent intent = new Intent(getApplicationContext(),Mainpage.class);
+                intent.putExtra("uid",uid);
                 startActivity(intent);
             }
         });
         button_home.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 Intent intent = new Intent(getApplicationContext(),Home.class);
+                intent.putExtra("uid",uid);
                 startActivity(intent);
             }
         });
         button_more.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 Intent intent = new Intent(getApplicationContext(),SettingActivity.class);
+                intent.putExtra("uid",uid);
                 startActivity(intent);
             }
         });
