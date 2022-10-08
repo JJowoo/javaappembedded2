@@ -89,16 +89,16 @@
         android:layout_alignStart="@+id/button_return_date" />
 
     <TextView
+        android:id="@+id/select_vehicle_text"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:id="@+id/select_vehicle_text"
-        android:layout_marginTop="300dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="300dp"
         android:text="차량 선택"
         android:textColor="@color/black"
-        android:textSize="20sp"/>
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/button_select_vehicle"
