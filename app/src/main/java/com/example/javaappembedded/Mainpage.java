@@ -35,12 +35,14 @@ public class Mainpage extends AppCompatActivity {
         button_home.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 Intent intent = new Intent(getApplicationContext(),Home.class);
+                intent.putExtra("uid",uid);
                 startActivity(intent);
             }
         });
         button_position.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 Intent intent = new Intent(getApplicationContext(), SeatAdjust.class);
+                intent.putExtra("uid",uid);
                 startActivity(intent);
             }
         });

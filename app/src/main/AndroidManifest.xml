@@ -17,6 +17,9 @@
         android:theme="@style/Theme.Javaappembedded"
         tools:targetApi="31">
         <activity
+            android:name=".CreateKey"
+            android:exported="false" />
+        <activity
             android:name=".VehicleManager"
             android:exported="false" />
 
