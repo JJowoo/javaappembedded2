@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -20,6 +23,8 @@ public class Home extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
+    float[] xpos = {0};
+    float[] ypos = {0};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +36,7 @@ public class Home extends AppCompatActivity {
         Button button_more = findViewById(R.id.button_more);
         Button button_createkey = findViewById(R.id.create_key);
         Button unlock = findViewById(R.id.unlock);
+        TextView distanceText = findViewById(R.id.distance);
 
         //intent안의 uid값을 받아옴
         Intent intent = getIntent();
@@ -40,6 +46,38 @@ public class Home extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         final String[] unlock_status = {""};
+
+
+        String[] xst = new String[1];
+        String[] yst = new String[1];
+
+        mDatabase.child("position").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                xst[0] = snapshot.child("x").getValue(String.class);
+                yst[0] = snapshot.child("y").getValue(String.class);
+                //Log.v("xst", xst[0]);
+                xst[0] = xst[0].substring(10, 15);
+                yst[0] = yst[0].substring(10, 15);
+                Log.v("xst", xst[0]);
+                xpos[0] = Float.parseFloat(xst[0]);
+                ypos[0] = Float.parseFloat(yst[0]);
+                //Log.v("xpos", String.valueOf(xpos[0]));
+                float distance;
+                distance =xpos[0] + ypos[0];
+                distanceText.setText(distance+"");
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+
+
+        //distance = (float) Math.sqrt((float) Math.pow(xpos[0],2)+ (float) Math.pow(ypos[0],2));
+        Log.v("xpos", String.valueOf(xpos[0]));
+        Log.v("distance", distanceText.getText().toString());
+
 
         mDatabase.child("unlock").addValueEventListener(new ValueEventListener() {
             @Override
@@ -55,11 +93,15 @@ public class Home extends AppCompatActivity {
 
         unlock.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-                if(unlock_status[0].equals("0")){
+                if(unlock_status[0].equals("0")&& Float.parseFloat(distanceText.getText().toString()) <5){
                     mDatabase.child("unlock").setValue("1");
                 }
-                else{
+                else if(unlock_status[0].equals("1")&& Float.parseFloat(distanceText.getText().toString()) <5){
                     mDatabase.child("unlock").setValue("0");
+                }
+                else{
+                    //send toast message "unlock failed"
+                    Toast.makeText(Home.this, "거리가 너무 멉니다", Toast.LENGTH_SHORT).show();
                 }
 
             }
