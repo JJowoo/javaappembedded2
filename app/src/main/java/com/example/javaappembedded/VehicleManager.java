@@ -6,6 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Adapter;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -31,14 +36,18 @@ public class VehicleManager extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance(); //
 
-        TextView car_num = (TextView) findViewById(R.id.car_num);
-        TextView vehicle_type = (TextView) findViewById(R.id.vehicle_type);
+        //TextView car_num = (TextView) findViewById(R.id.car_num);
+        //TextView vehicle_type = (TextView) findViewById(R.id.vehicle_type);
         TextView max_num = (TextView) findViewById(R.id.max_num);
+        ListView listview = (ListView) findViewById(R.id.listView);
+
+        ArrayAdapter<String> vehicle = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
 
         //email값을 받아옴
         Intent intent = getIntent();
         String uid = intent.getStringExtra("uid");
 
+        /*
         mDatabase.child(uid).child("등록차량").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -60,8 +69,32 @@ public class VehicleManager extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
+        });*/
+
+        mDatabase.child(uid).child("등록차량").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    String carNum = dataSnapshot.getKey();
+                    vehicle.add(carNum);
+                }
+                listview.setAdapter(vehicle);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
         });
 
+        /*
+        //리스트에서 선택한거
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String carNum = (String) parent.getItemAtPosition(position);
+            }
+        });*/
 
 
 
